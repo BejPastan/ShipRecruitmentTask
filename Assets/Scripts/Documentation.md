@@ -1,18 +1,39 @@
-# Elements
-## ShipInjector
-class for injecting into ShipPhysics and ShipVisuals ShipManager
+# ShipRecruitmentTask — Documentation
 
-## WindController
-control direction and power of wind
-## Player Input
-handle inputs from player, and put them into right IShipController
-## ShipPhysics
-Calculate 
-## ShipManager
-orchestrate elements of ship, like ShipSphysics, ShipVisuals, and implement IShipController interface
-## ShipVisuals
-Control visuals of the ship, like animations
+## Overview
+Sailing-ship prototype (Unity + VContainer + Input System).
+- `Wind` owns the global wind vector with smooth interpolated transitions.
+- `ShipController` owns ship state (`ShipManager` ScriptableObject), physics, visuals, input, and DI wiring.
+- `UI/ShipStateUI` binds ship state to UIToolkit labels.
+- Input defined in `Resources/ShipInput.inputactions`, accessed via generated `Resources/ShipInput.cs`.
 
-# IShipController
-void ChangeSailRot(float change)
-void ChangeSailFurl(float change)
+DI scopes:
+- `WindInjector` -> registers `IWindController` singleton.
+- `ShipInjector` (ship prefab scope) → instantiates + registers `ShipManager` as `IShipController` / `IShipDataContainer`, plus `Rigidbody`, `ShipPhysics`, `ShipVisuals`, `PlayerInputController`, `ShipStateUI`.
+
+
+## Elements
+
+### WindInjector (`Scripts/Wind/WindInjector.cs`)
+Inject wind dependency
+
+### WindController (`Scripts/Wind/WindController.cs`)
+Owns wind state and it's updates
+
+### ShipPhysics (`Scripts/ShipController/ShipPhysics.cs`)
+Calculate forces for ship, and apply them
+
+### ShipInjector (`Scripts/ShipController/ShipInjector.cs`)
+Injecting dependencies into ship modules
+
+### ShipManager (`Scripts/ShipController/ShipManager.cs`)
+Manage ship, hold data and recieve inputs
+
+### PlayerInputController (`Scripts/ShipController/PlayerInputController.cs`)
+Test Player binding between InputActions and ShipManager
+
+### ShipStateUI (`Scripts/UI/ShipStateUI.cs`)
+Manage bindign beteween UI and state of ship
+
+### ShipVisuals (`Scripts/ShipController/ShipVisuals.cs`)
+Manage animations and visualization of ship state
