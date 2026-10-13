@@ -20,11 +20,7 @@ namespace ShipRecruitmentTask.Ship
         [SerializeField]
         float maxSailFlur = 100f;
 
-        [HideInInspector]
-        [SerializeField]//public for reference in UI
         float sailRot = 0;
-        [HideInInspector]
-        [SerializeField]//public for reference in UI
         float sailFlur = 0;
 
         [SerializeField]
