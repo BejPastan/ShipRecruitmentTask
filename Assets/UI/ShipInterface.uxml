@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ShipInterface.uss?fileID=7433441132597879392&amp;guid=d5be59cbe91c4b04f819cba1435faa18&amp;type=3#ShipInterface"/>
+    <ui:VisualElement name="hud-top-bar" class="hud-bar">
+        <ui:VisualElement name="LabelContriner" class="labelContainer">
+            <ui:Label text="Sail Flur" class="hud-label hud-label--left"/>
+            <ui:Label name="flur-label-val" text="" class="hud-label hud-label--left">
+                <Bindings>
+                    <ui:DataBinding property="text" data-source-path="sailFlur" data-source="project://database/Assets/Resources/Ship1.asset?fileID=11400000&amp;guid=e327b6a411d38374ab8c50f4b215dd6d&amp;type=2#Ship1" binding-mode="ToTarget"/>
+                </Bindings>
+            </ui:Label>
+        </ui:VisualElement>
+        <ui:VisualElement name="LabelContriner" class="labelContainer">
+            <ui:Label text="Sail Rotation" class="hud-label hud-label--right"/>
+            <ui:Label name="rot-label-val" text="" class="hud-label hud-label--right">
+                <Bindings>
+                    <ui:DataBinding property="text" data-source-path="sailRot" data-source="project://database/Assets/Resources/Ship1.asset?fileID=11400000&amp;guid=e327b6a411d38374ab8c50f4b215dd6d&amp;type=2#Ship1" binding-mode="ToTarget"/>
+                </Bindings>
+            </ui:Label>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

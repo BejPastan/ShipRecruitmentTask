@@ -1,0 +1,5 @@
+<linker>
+    <!-- Replace 'YourAssemblyName' with the exact name from your .asmdef file Inspector -->
+    <assembly fullname="ShipTestTask" preserve="all"/>
+	<assembly fullname="VContainer" preserve="all"/>
+</linker>
