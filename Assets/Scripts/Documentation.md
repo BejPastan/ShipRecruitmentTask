@@ -22,12 +22,20 @@ Owns wind state and it's updates
 
 ### ShipPhysics (`Scripts/ShipController/ShipPhysics.cs`)
 Calculate forces for ship, and apply them
+set ship max speed
+set ship side friction(to slow ship lateral movement)
 
 ### ShipInjector (`Scripts/ShipController/ShipInjector.cs`)
 Injecting dependencies into ship modules
 
 ### ShipManager (`Scripts/ShipController/ShipManager.cs`)
 Manage ship, hold data and recieve inputs
+
+  maxSailAngle - max angle the sail could rotate from center
+  maxSailFlur - max value of flur of sail(does not effect max speed or force)
+  sailRotationSpeed - speed in deg/1 of rotation of sail
+  sailFlurSpeed - speed of fluring sail in units/s
+  turnAngle - angle in which ship turn
 
 ### PlayerInputController (`Scripts/ShipController/PlayerInputController.cs`)
 Test Player binding between InputActions and ShipManager
